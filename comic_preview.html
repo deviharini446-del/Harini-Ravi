@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ComicCraft - Comic Preview
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="hero">
+
+        <div class="logo">
+            COMICCRAFT
+        </div>
+
+        <h1>
+            Your Comic
+        </h1>
+
+        <p>
+            Your AI-generated story is ready.
+        </p>
+
+    </div>
+
+
+    {% for panel in layout %}
+
+
+    <div class="panel-card">
+
+
+        <h2>
+
+            Panel {{ panel.panel_number }}:
+            {{ panel.title }}
+
+        </h2>
+
+
+        <!-- IMAGE -->
+
+        {% if panel.image_path %}
+
+        <img
+            src="{{ panel.image_path }}"
+            alt="{{ panel.title }}"
+            class="comic-image"
+        >
+
+        {% endif %}
+
+
+        <!-- SCENE -->
+
+        {% if panel.scene_description %}
+
+        <div class="scene-description">
+
+            <em>
+                {{ panel.scene_description }}
+            </em>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- STORY -->
+
+        <div class="story-text">
+
+            {{ panel.text }}
+
+        </div>
+
+
+        <!-- IMAGE PROMPT -->
+
+        <details>
+
+            <summary>
+                Image Prompt Reference
+            </summary>
+
+            <p>
+                {{ panel.image_prompt }}
+            </p>
+
+        </details>
+
+
+    </div>
+
+
+    {% endfor %}
+
+
+    <!-- ACTIONS -->
+
+    <div class="actions">
+
+
+        {% if pdf_path %}
+
+        <a
+            href="{{ pdf_path }}"
+            class="button"
+            download
+        >
+
+            Download Your Comic as PDF
+
+        </a>
+
+        {% endif %}
+
+
+        <a
+            href="/"
+            class="button secondary"
+        >
+
+            Create Another Comic
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

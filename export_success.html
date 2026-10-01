@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ComicCraft - Export Success
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="container success-container">
+
+
+    <div class="success-card">
+
+
+        <div class="success-icon">
+
+            ✓
+
+        </div>
+
+
+        <h1>
+
+            Comic Export Successful!
+
+        </h1>
+
+
+        <p>
+
+            {{ message }}
+
+        </p>
+
+
+        {% if image_path %}
+
+        <img
+            src="{{ image_path }}"
+            class="comic-image"
+            alt="Generated test image"
+        >
+
+        {% endif %}
+
+
+        {% if pdf_path %}
+
+        <a
+            href="{{ pdf_path }}"
+            class="button"
+            download
+        >
+
+            Download PDF
+
+        </a>
+
+        {% endif %}
+
+
+        <a
+            href="/"
+            class="button secondary"
+        >
+
+            Go Create Another Comic
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

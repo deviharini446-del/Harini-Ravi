@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+pydantic
+google-generativeai
+diffusers
+transformers
+torch
+Pillow
+accelerate
+fpdf2
+python-dotenv
